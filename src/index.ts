@@ -1,7 +1,9 @@
-import "reflect-metadata";
+import "reflect-metadata"
 import path from "path";
+require("dotenv").config({ path: ".env" })
+import "./mongodb/connect";
 import { buildSchema } from "type-graphql";
-import {ApolloServer} from "apollo-server";
+import { ApolloServer } from "apollo-server";
 import { ClientResolver } from "./ClientResolver";
 
 async function main() {
@@ -11,11 +13,11 @@ async function main() {
     })
 
     const server = new ApolloServer({
-        schema, 
+        schema,
     })
 
     const { url } = await server.listen()
-    console.log("Server running on" + url)
+    console.log("Server running on " + url)
 
 }
 main()

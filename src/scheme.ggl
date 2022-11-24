@@ -4,5 +4,5 @@
 # -----------------------------------------------
 
 type Query {
-  hello: String!
+  clients: String!
 }
