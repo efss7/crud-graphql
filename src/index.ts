@@ -1,10 +1,10 @@
-import "reflect-metadata"
-import path from "path";
-require("dotenv").config({ path: ".env" })
-import "./mongodb/connect";
-import { buildSchema } from "type-graphql";
 import { ApolloServer } from "apollo-server";
-import { ClientResolver } from "./ClientResolver";
+import path from "path";
+import "reflect-metadata";
+import { buildSchema } from "type-graphql";
+import "./mongodb/connect";
+import { ClientResolver } from "./resolvers/ClientResolver";
+require("dotenv").config({ path: ".env" })
 
 async function main() {
     const schema = await buildSchema({

@@ -3,6 +3,33 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Client {
+  contact: String!
+  id: ID!
+  name: String!
+  type: String!
+}
+
+type Mutation {
+  createClient(createClientObject: createClientInput!): Client!
+  deleteClient(id: String!): String!
+  updateClient(updateClientObject: updateClientInput!): Client!
+}
+
 type Query {
-  clients: String!
+  findClientById(id: String!): Client!
+  findClients: [Client!]!
+}
+
+input createClientInput {
+  contact: String!
+  name: String!
+  type: String!
+}
+
+input updateClientInput {
+  contact: String!
+  id: ID!
+  name: String!
+  type: String!
 }
