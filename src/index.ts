@@ -4,11 +4,12 @@ import "reflect-metadata";
 import { buildSchema } from "type-graphql";
 import "./mongodb/connect";
 import { ClientResolver } from "./resolvers/ClientResolver";
+import { ImmobileResolver } from "./resolvers/ImmobileResolver";
 require("dotenv").config({ path: ".env" })
 
 async function main() {
     const schema = await buildSchema({
-        resolvers: [ClientResolver],
+        resolvers: [ClientResolver, ImmobileResolver],
         emitSchemaFile: path.resolve(__dirname, "scheme.ggl")
     })
 
