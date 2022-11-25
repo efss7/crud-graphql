@@ -2,7 +2,7 @@ import { ApolloServer } from "apollo-server";
 import path from "path";
 import "reflect-metadata";
 import { buildSchema } from "type-graphql";
-import "./mongodb/connect";
+import "./mongodb/Connect";
 import { ClientResolver } from "./resolvers/ClientResolver";
 import { ImmobileResolver } from "./resolvers/ImmobileResolver";
 require("dotenv").config({ path: ".env" })

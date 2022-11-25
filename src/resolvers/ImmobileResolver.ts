@@ -2,8 +2,8 @@ import { Arg, Mutation, Query, Resolver } from "type-graphql";
 import { createImmobileInput, updateImmobileInput } from "../inputs/ImmobileInput";
 import { Immobile } from "../models/Immobile";
 import { ImmobileMongo } from "../mongodb/models/Immobile";
-import { CreateImmobileService } from "../services/createImmobileService";
-import { UpdateImmobileService } from "../services/updateImmobileService";
+import { CreateImmobileService } from "../services/CreateImmobileService";
+import { UpdateImmobileService } from "../services/UpdateImmobileService";
 import { CustomError } from "../utils/CustomError";
 
 @Resolver()

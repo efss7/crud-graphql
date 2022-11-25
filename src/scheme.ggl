@@ -3,6 +3,13 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Client {
+  contact: String!
+  id: ID!
+  name: String!
+  type: String!
+}
+
 type Immobile {
   address: String!
   id: ID!
@@ -11,19 +18,37 @@ type Immobile {
 }
 
 type Mutation {
+  createClient(createClientObject: createClientInput!): Client!
   createImmobile(createImmobileObject: createImmobileInput!): Immobile!
+  deleteClient(id: String!): String!
   deleteImmobile(id: String!): String!
+  updateClient(updateClientObject: updateClientInput!): Client!
   updateImmobile(updateImmobileObject: updateImmobileInput!): Immobile!
 }
 
 type Query {
+  findClientById(id: String!): Client!
+  findClients: [Client!]!
   findImmobile: [Immobile!]!
   findImmobileById(id: String!): Immobile!
+}
+
+input createClientInput {
+  contact: String!
+  name: String!
+  type: String!
 }
 
 input createImmobileInput {
   address: String!
   ownerId: String!
+  type: String!
+}
+
+input updateClientInput {
+  contact: String!
+  id: ID!
+  name: String!
   type: String!
 }
 
